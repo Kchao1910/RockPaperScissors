@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+  <header>
+    <h1 class="center-text">Rock Paper Scissors</h1>
+  </header>
+  <main class="grid grid-5-cols grid-4-rows">
+    <section class="score-board-wrapper">
+      <p>Scoreboard</p>
+    </section>
+
+    <section class="player-label">
+      <p>Player</p>
+      <p id="player-score">0</p>
+    </section>
+
+    <section id="message">
+      Choose a Hand
+    </section>
+
+    <section class="computer-label">
+      <p>Computer</p>
+      <p id="computer-score">0</p>
+    </section>
+
+    <section class="rock fa-stack fa-2x turquoise" onclick="game('r')" ontouchstart="game('r')">
+      <i class="fal fa-circle fa-stack-2x"></i>
+      <i class="fal fa-hand-rock fa-stack-1x"></i>
+    </section>
+
+    <section class="paper fa-stack fa-2x light-grn" onclick="game('p')" ontouchstart="game('p')">
+      <i class="fal fa-circle fa-stack-2x"></i>
+      <i class="fal fa-hand-paper fa-stack-1x"></i>
+    </section>
+
+    <section class="scissors fa-stack fa-2x pale-violet" onclick="game('s')" ontouchstart="game('s')">
+      <i class="fal fa-circle fa-stack-2x"></i>
+      <i class="fal fa-hand-scissors fa-stack-1x"></i>
+    </section>
+
+  </main>
+  <script src="index.js"></script>
+  <script src="https://kit.fontawesome.com/e3488cdef9.js"></script>
+</body> 
+</html>
