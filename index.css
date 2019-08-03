@@ -1,11 +1,44 @@
+/*
+  Table of contents
+  1. Typography
+  2. Colors (Font Awesome Icons and Player Labels)
+  3. Grid Layout
+    3.1. Grid-Column Positioning
+    3.2. Grid-Row Positioning
+  4. Pseudo Classes (Hover)
+  5. Overriding Font Awesome Default Styles
+  6. Media Query/ Queries
+*/
+
+/*
+  1. Typography
+*/
 * {
   font-family: 'Amatic SC', cursive;
   text-align: center;
 }
 
+h1, section, a {
+  letter-spacing: 2px;
+  font-size: 2rem;
+}
+
+.player-name {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+
+}
+
 /*
-  Colors
+  2. Colors (Font Awesome Icons and Player Labels)
 */
+.deep-pink {
+  color: deeppink;
+}
+
+.deep-skyblue {
+  color: deepskyblue;
+}
 
 .light-grn {
   color: lightgreen;
@@ -20,12 +53,8 @@
 }
 
 /*
-  Over-ride default stack style
+  3. Grid Layout
 */
-.fa-stack {
-  width: auto !important;
-}
-
 .grid {
   align-items: center;
   display: grid;
@@ -39,71 +68,87 @@
   grid-template-rows: repeat(4, 1fr);
 }
 
-h1, section, a {
-  letter-spacing: 2px;
-  font-size: 2rem;
-}
-
 /*
-  Grid Placement
+  3.1. Grid-Column Positioning
 */
-.computer-label {
-  grid-column: 5/6;
-  grid-row: 1;
-}
-
-#message {
-  grid-column: 2/5;
-  grid-row: 2;
-}
-
-.paper {
-  grid-column: 2/5;
-  grid-row: 3;
-}
-
-.play-button {
-  grid-column: 2/5;
-  grid-row: 4;
-}
-
-.player-label {
-  grid-column: 1/2;
-  grid-row: 1;
-}
-
+.player-label,
 .rock {
   grid-column: 1/2;
-  grid-row: 3;
 }
 
-.scissors {
-  grid-column: 5/6;
-  grid-row: 3;
-}
-
+#message,
+.paper,
+.play-button,
 .score-board-wrapper {
   grid-column: 2/5;
 }
 
-/*
-  Hover Styles
-*/
+.computer-label,
+.scissors {
+  grid-column: 5/6;
+}
 
-.rock:hover, .paper:hover, .scissors:hover {
+
+/*
+  3.2. Grid-Row Positioning
+*/
+.computer-label,
+.player-label {
+  grid-row: 1;
+}
+
+#message {
+  grid-row: 2;
+}
+
+.paper,
+.rock,
+.scissors {
+  grid-row: 3;
+}
+
+.play-button {
+  grid-row: 4;
+}
+
+/*
+  4. Pseudo Classes (Hover)
+*/
+.rock:hover,
+.paper:hover,
+.scissors:hover {
   color: gold;
   transition: ease-in-out .2s;
 }
 
+/*
+  5. Overriding Font Awesome Default Styles
+*/
+.fa-stack {
+  width: auto !important;
+}
+
+/*
+  6. Media Query/ Queries
+*/
 @media screen and (max-width: 479px) {
+  /*
+    Smaller font size when resizing to smaller devices
+  */
   h1, section, a {
     font-size: 1.6rem;
   }
 
+  /*
+    Overriding Font Awesome default styles
+  */
   .fa-2x {
     font-size: 1.5em !important;
   }
 
+  /*
+    Column 2 and 4 become smaller in width
+  */
   .grid-5-cols {
     grid-template-columns: 1fr 60 0px 60px 1fr;
   }
